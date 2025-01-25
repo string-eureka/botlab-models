@@ -1,0 +1,8 @@
+torch==1.7.1 -f https://download.pytorch.org/whl/1.7.1/torch_stable.html
+torchvision==0.8.2 -f https://download.pytorch.org/whl/1.7.1/torch_stable.html
+ftfy
+regex
+tqdm
+git+https://github.com/openai/CLIP.git
+Flask
+requests
