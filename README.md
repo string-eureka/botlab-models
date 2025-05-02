@@ -20,7 +20,7 @@ docker compose up --build
 
 ---
 
-## 🔌 Unified API Endpoints (via Gateway)
+## API Endpoints
 
 All client requests go through: `http://localhost:5000/`
 
