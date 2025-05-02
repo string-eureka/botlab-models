@@ -2,11 +2,7 @@ import base64
 import io
 import torch
 import uuid
-import sys,os
 
-current_dir = os.path.dirname(os.path.abspath(__file__))
-parent_dir = os.path.abspath(os.path.join(current_dir, '..'))
-sys.path.insert(0, parent_dir)
 
 from helper import download_image,delete_images
 from flask import Flask, request, Response, jsonify

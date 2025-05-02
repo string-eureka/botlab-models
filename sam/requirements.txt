@@ -4,3 +4,4 @@ torch==2.7.0
 pillow==11.2.1
 requests==2.32.3
 git+https://github.com/facebookresearch/segment-anything.git
+torchvision==0.22.0

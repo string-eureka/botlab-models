@@ -2,21 +2,15 @@ import base64
 import io
 import torch
 import uuid
-import sys
-import os
-import numpy as np
 
-current_dir = os.path.dirname(os.path.abspath(__file__))
-parent_dir = os.path.abspath(os.path.join(current_dir, '..'))
-sys.path.insert(0, parent_dir)
+import numpy as np
 
 from helper import download_image, delete_images
 from flask import Flask, request, Response, jsonify
 from PIL import Image
 from urllib.parse import urlparse
 
-from sam2 import sam_model_registry
-from sam2.predictors import SamPredictor
+from segment_anything import SamPredictor,sam_model_registry
 
 app = Flask(__name__)
 

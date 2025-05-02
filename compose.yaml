@@ -1,34 +1,21 @@
 version: '3.8'
 
 services:
-  clip:
-    build:
-      context: ./clip
-    container_name: clip_service
-    ports:
-      - "5001:5001"
-    restart: always
-
-  sam:
-    build:
-      context: ./sam
-    container_name: sam_service
-    ports:
-      - "5002:5002"
-    volumes:
-      - ./sam/sam_vit_b_01ec64.pth:/app/sam_vit_b_01ec64.pth
-    restart: always
-
   gateway:
-    build:
-      context: ./gateway
-    container_name: gateway_service
+    build: ./gateway
+    container_name: gateway
     ports:
-      - "8000:8000"
-    environment:
-      - CLIP_SERVICE_URL=http://clip:5001
-      - SAM_BASE_URL=http://sam:5002
+      - "5000:5000"
     depends_on:
       - clip
       - sam
-    restart: always
+  clip:
+    build: ./clip
+    container_name: clip
+    ports:
+      - "5001:5001"
+  sam:
+    build: ./sam
+    container_name: sam
+    ports:
+      - "5002:5002"
